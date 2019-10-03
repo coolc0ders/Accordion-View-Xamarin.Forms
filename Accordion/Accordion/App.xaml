@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Accordion.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="FontAwesome"
+                        x:TypeArguments="x:String"
+                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"
+                        iOS="Font Awesome 5 Free"
+                        WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

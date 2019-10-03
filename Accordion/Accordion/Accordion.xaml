@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Accordion.Accordion"
+             x:Name="_accordion_view_123">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ContentView Grid.Row="1" Margin="5" x:Name="_accContent"
+                         Content="{Binding Source={x:Reference _accordion_view_123}, Path=AccordionContentView}"/>
+
+            <Grid Margin="5"
+                  BackgroundColor="{Binding Source={x:Reference _accordion_view_123}, Path=HeaderBackgroundColor}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TitleTapped"/>
+                </Grid.GestureRecognizers>
+
+                <Label FontSize="Large" HorizontalOptions="Start"
+                       VerticalOptions="Start" Margin="5,0,0,0"
+                       Text="{Binding Source={x:Reference _accordion_view_123}, Path=Title}"/>
+                <ContentView x:Name="_indicatorContainer"
+                             Content="{Binding Source={x:Reference _accordion_view_123}, Path=IndicatorView}"
+                             HorizontalOptions="End" Grid.Column="1"
+                             VerticalOptions="Center"/>
+            </Grid>
+            <!--IsVisible="{Binding Source={x:Reference _accordion_view_123}, Path=IsOpen}"-->
+        </Grid>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Accordion"
+             x:Class="Accordion.MainPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <local:Accordion  Title="First Accordion">
+
+            <local:Accordion.AccordionContentView>
+                <StackLayout>
+                    <Label Text="Here is a simple content"
+                           TextColor="Black"/>
+                    <Label Text="Today is saturday and we are going to code till it gets dark."
+                           TextColor="Gray"/>
+                    <Button Text="Click Here"/>
+                </StackLayout>
+            </local:Accordion.AccordionContentView>
+
+            <local:Accordion.IndicatorView>
+                <Label Text="&#xf078;" FontSize="Large"
+                       FontFamily="{StaticResource FontAwesome}"/>
+            </local:Accordion.IndicatorView>
+
+        </local:Accordion>
+        
+        <local:Accordion  Title="Second Accordion"
+                          Grid.Row="1">
+
+            <local:Accordion.AccordionContentView>
+                <StackLayout>
+                    <Label Text="Here is a simple content"
+                           TextColor="Black"/>
+                    <Label Text="Today is saturday and we are going to code till it gets dark."
+                           TextColor="Gray"/>
+                    <Button Text="Click Here"/>
+                </StackLayout>
+            </local:Accordion.AccordionContentView>
+
+            <local:Accordion.IndicatorView>
+                <Label Text="&#xf078;" FontSize="Large"
+                       FontFamily="{StaticResource FontAwesome}"/>
+            </local:Accordion.IndicatorView>
+
+        </local:Accordion>
+
+        <StackLayout Grid.Row="2">
+            <Label Text="Collection View with Several Accordions"
+               Margin="5,10,0,0"/>
+            <BoxView BackgroundColor="Gray"
+                 HeightRequest="1"
+                 Margin="5,0,0,0"/>
+        </StackLayout>
+
+        <CollectionView Grid.Row="3">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type local:Todo}">
+                    <local:Todo Done="True" Title="Go run a mile or two"/>
+                    <local:Todo Done="False" Title="Go feed your cat"/>
+                    <local:Todo Done="False" Title="Clean the waiting room"/>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:Accordion Title="Todo">
+
+                        <local:Accordion.AccordionContentView>
+                            <StackLayout>
+                                <CheckBox IsChecked="{Binding Done}"/>
+                                <Label Text="{Binding Title}" Margin="10"/>
+                            </StackLayout>
+                        </local:Accordion.AccordionContentView>
+
+                        <local:Accordion.IndicatorView>
+                            <Label Text="&#xf078;" FontSize="Large" FontFamily="{StaticResource FontAwesome}"/>
+                        </local:Accordion.IndicatorView>
+                    </local:Accordion>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
