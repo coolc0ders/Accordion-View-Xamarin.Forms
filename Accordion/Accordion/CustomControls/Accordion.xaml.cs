@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Accordion
+namespace Accordion.CustomControls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Accordion : ContentView
@@ -58,10 +58,12 @@ namespace Accordion
 
                 if (control.IsOpen == false)
                 {
+                    VisualStateManager.GoToState(control, "Open");
                     control.Close();
                 }
                 else
                 {
+                    VisualStateManager.GoToState(control, "Closed");
                     control.Open();
                 }
             }

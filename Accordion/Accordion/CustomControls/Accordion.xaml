@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Accordion.Accordion"
+             x:Class="Accordion.CustomControls.Accordion"
              x:Name="_accordion_view_123">
     <ContentView.Content>
         <Grid>

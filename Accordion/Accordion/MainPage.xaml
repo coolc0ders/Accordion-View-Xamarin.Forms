@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:local="clr-namespace:Accordion"
+             xmlns:local="clr-namespace:Accordion.CustomControls"
+             xmlns:loc="clr-namespace:Accordion"
              x:Class="Accordion.MainPage">
 
     <Grid>
@@ -65,10 +66,10 @@
 
         <CollectionView Grid.Row="3">
             <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type local:Todo}">
-                    <local:Todo Done="True" Title="Go run a mile or two"/>
-                    <local:Todo Done="False" Title="Go feed your cat"/>
-                    <local:Todo Done="False" Title="Clean the waiting room"/>
+                <x:Array Type="{x:Type loc:Todo}">
+                    <loc:Todo Done="True" Title="Go run a mile or two"/>
+                    <loc:Todo Done="False" Title="Go feed your cat"/>
+                    <loc:Todo Done="False" Title="Clean the waiting room"/>
                 </x:Array>
             </CollectionView.ItemsSource>
             <CollectionView.ItemTemplate>
