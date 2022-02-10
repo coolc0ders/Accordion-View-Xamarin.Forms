@@ -26,11 +26,11 @@ namespace Accordion.CustomControls
             set => SetValue(ContentViewProperty, value);
         }
 
-        public static readonly BindableProperty TitleBindableProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(Accordion), default(string));
+        public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(Accordion), default(string));
         public string Title
         {
-            get => (string)GetValue(TitleBindableProperty);
-            set => SetValue(TitleBindableProperty, value);
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
 
         public static readonly BindableProperty IsOpenBindablePropertyProperty = BindableProperty.Create(nameof(IsOpen), typeof(bool), typeof(Accordion), false, propertyChanged: IsOpenChanged);
